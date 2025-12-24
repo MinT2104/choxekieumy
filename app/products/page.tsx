@@ -1,7 +1,5 @@
 "use client";
 import Link from "next/link";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Fuel,
@@ -385,8 +383,6 @@ export { cars };
 export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           {/* Header */}
@@ -485,8 +481,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
