@@ -1,16 +1,12 @@
 "use client"
 
-import { Phone, Mail, MapPin, Globe, Facebook, Instagram, Twitter } from "lucide-react"
+import Image from "next/image"
+import { Phone, Mail, MapPin, Globe, Facebook, Instagram, Youtube, Music, MessageCircle } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="bg-[#050505] text-gray-300 font-sans relative">
       {/* --- CUSTOM GRADIENT BORDER TOP --- */}
-      {/* - h-1: Chiều cao 4px (tương đương border-t-4)
-         - Gradient logic: 
-           + 0% -> 30%: Màu xanh #0052cc (Solid)
-           + 30% -> 100%: Chuyển màu từ Đỏ -> Xanh -> Tím
-      */}
       <div
         className="w-full h-2"
         style={{
@@ -19,7 +15,24 @@ export default function Footer() {
       ></div>
 
       <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        {/* Logo & Company Name Section */}
+        <div className="mb-12 pb-8 border-b border-gray-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <img
+                src="https://choxekieumy.vn/thumb/300x200/1/upload/hinhanh/logologochinh5965removebgpreview-4414.png"
+                alt="CHỢ XE KIỂU MỸ Logo"
+                className="h-24 object-contain"
+              />
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-white mb-2">CÔNG TY TNHH TM DV XD ĐỊA ỐC TÂN VIỄN ĐÔNG</h2>
+              <p className="text-gray-400 text-sm">Chợ Xe Kiểu Mỹ - Mua Bán Xe Uy Tín Số 1</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* CỘT 1: THÔNG TIN LIÊN HỆ */}
           <div>
             <h3 className="text-white text-lg font-bold uppercase mb-6 tracking-wide">THÔNG TIN LIÊN HỆ</h3>
@@ -28,107 +41,97 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-1" />
                 <span>
                   <strong className="text-white block mb-1">Trụ sở chính:</strong>
-                  298 Vĩnh Viễn, Phường 4, Quận 10, Thành Phố Hồ Chí Minh
+                  298 Vĩnh Viễn, P. 4, Q. 10, TP.HCM
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-1" />
                 <span>
-                  <strong className="text-white block mb-1">Showroom:</strong>
-                  714 Tân Kỳ Tân Quý, KP 39, Phường Bình Hưng Hòa, Thành phố Hồ Chí Minh
+                  <strong className="text-white block mb-1">Chi nhánh 1 (Showroom):</strong>
+                  714 Tân Kỳ-Tân Quý, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-1" />
+                <span>
+                  <strong className="text-white block mb-1">Chi nhánh 2:</strong>
+                  507 Quốc lộ 1A, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
-                <a href="tel:0935794345" className="hover:text-white transition-colors">
-                  Điện thoại: 0935 794 345
-                </a>
+                <div>
+                  <a href="tel:0903901438" className="hover:text-white transition-colors block font-semibold">
+                    0903 901 438 (A Tiên)
+                  </a>
+                  <a href="tel:0981292973" className="hover:text-white transition-colors block font-semibold">
+                    0981 292 973 (A Tiên)
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-white flex-shrink-0" />
-                <a href="mailto:duyhau686883@gmail.com" className="hover:text-white transition-colors">
-                  Email: duyhau686883@gmail.com
+                <a href="mailto:choxekieumy.info@gmail.com" className="hover:text-white transition-colors">
+                  choxekieumy.info@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-5 h-5 text-white flex-shrink-0" />
-                <span>Website: http://companyname.abc</span>
+                <span>Website: choxekieumy.vn</span>
               </li>
             </ul>
 
             {/* Social Icons */}
-            <div className="mt-8 flex items-center gap-3">
-              <span className="text-sm font-bold text-white uppercase mr-2">LIÊN KẾT:</span>
-              <div className="flex gap-2">
-                <a 
-                  href="https://www.facebook.com/choxekieumy.vn" 
-                  target="_blank" 
+            <div className="mt-8">
+              <p className="text-sm font-bold text-white uppercase mb-6 tracking-wide">Kết nối với chúng tôi:</p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://www.facebook.com/choxekieumy"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors"
+                  className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg hover:-translate-y-1 overflow-hidden"
+                  title="Facebook"
                 >
-                  <Facebook className="w-5 h-5 fill-current" />
-                </a>
-                <a href="#" className="bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors">
-                  <Twitter className="w-5 h-5 fill-current" />
+                  <Image src="/images/social/facebook.png" alt="Facebook" width={48} height={48} />
                 </a>
                 <a
-                  href="#"
-                  className="bg-white text-black w-9 h-9 rounded-full flex items-center justify-center text-[10px] font-bold hover:bg-gray-200 transition-colors"
+                  href="https://www.youtube.com/@choxekieumy5824"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg hover:-translate-y-1 overflow-hidden"
+                  title="YouTube"
                 >
-                  Zalo
+                  <Image src="/images/social/youtube.png" alt="YouTube" width={48} height={48} />
+                </a>
+                <a
+                  href="https://oa.zalo.me/choxekieumy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg hover:-translate-y-1 overflow-hidden"
+                  title="Zalo OA"
+                >
+                  <Image src="/images/social/zalo.png" alt="Zalo" width={48} height={48} />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@choxekieumy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg hover:-translate-y-1 overflow-hidden"
+                  title="TikTok"
+                >
+                  <Image src="/images/social/tiktok.png" alt="TikTok" width={48} height={48} />
+                </a>
+                <a
+                  href="https://www.instagram.com/choxekieumy.vn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 flex items-center justify-center rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-2xl shadow-lg hover:-translate-y-1 overflow-hidden"
+                  title="Instagram"
+                >
+                  <Image src="/images/social/instagram.png" alt="Instagram" width={48} height={48} />
                 </a>
               </div>
             </div>
-          </div>
-
-          {/* CỘT 2: CHÍNH SÁCH HỖ TRỢ */}
-          <div>
-            <h3 className="text-white text-lg font-bold uppercase mb-6 tracking-wide">CHÍNH SÁCH HỖ TRỢ</h3>
-            <ul className="space-y-4 text-base text-gray-400">
-              {[
-                "Chính sách bảo mật",
-                "Chính sách thanh toán",
-                "Chính sách đổi trả",
-                "Chính sách đặt hàng",
-                "Chính sách vận chuyển",
-                "Quy chế hoạt động",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors hover:underline decoration-white/30 underline-offset-4"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CỘT 3: THÔNG TIN HỖ TRỢ */}
-          <div>
-            <h3 className="text-white text-lg font-bold uppercase mb-6 tracking-wide">THÔNG TIN HỖ TRỢ</h3>
-            <ul className="space-y-4 text-base text-gray-400">
-              {[
-                "Thông tin thanh toán",
-                "Chính sách hỗ trợ",
-                "Chính sách bảo mật thông tin",
-                "Liên hệ tư vấn",
-                "Mẫu xe đang khuyến mãi",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="hover:text-white transition-colors hover:underline decoration-white/30 underline-offset-4"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* CỘT 4: FANPAGE FACEBOOK */}
@@ -138,9 +141,9 @@ export default function Footer() {
                 <Facebook className="w-8 h-8 text-[#1877f2] fill-current" />
                 <span className="font-bold text-black text-base">FANPAGE FACEBOOK</span>
               </div>
-              <a 
-                href="https://www.facebook.com/choxekieumy.vn" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/choxekieumy"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="block relative w-full h-40 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg overflow-hidden group cursor-pointer"
               >
@@ -152,9 +155,9 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
               </a>
               <div className="mt-3">
-                <a 
-                  href="https://www.facebook.com/choxekieumy.vn" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/choxekieumy"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full text-center bg-[#1877f2] hover:bg-[#166fe5] text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
                 >

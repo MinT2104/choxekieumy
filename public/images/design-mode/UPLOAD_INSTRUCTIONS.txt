@@ -1,0 +1,13 @@
+Đặt ảnh bạn vừa gửi vào đường dẫn này và đổi tên file thành: uploaded-car.jpg
+
+Ví dụ (macOS):
+1. Tải ảnh từ cuộc trò chuyện xuống (hoặc kéo thả). 
+2. Mở Terminal và chạy:
+
+   mv ~/Downloads/NAME_OF_DOWNLOADED_FILE.jpg "$(pwd)/public/images/design-mode/uploaded-car.jpg"
+
+(hoặc dùng Finder: copy -> paste vào thư mục `public/images/design-mode/` và đổi tên thành `uploaded-car.jpg`)
+
+Sau khi bạn đặt file `uploaded-car.jpg` ở đó, component `components/why-choose-us.tsx` sẽ hiển thị ảnh mới.
+
+Nếu bạn muốn, bạn có thể gửi file ảnh dưới dạng Base64 và tôi sẽ tạo file ảnh trực tiếp trong repo cho bạn.

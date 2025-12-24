@@ -628,8 +628,8 @@ export default function ProductDetailPage() {
     predefinedImages && predefinedImages.length > 0
       ? predefinedImages
       : car
-      ? [car.image]
-      : [];
+        ? [car.image]
+        : [];
 
   useEffect(() => {
     // Reset to first image when car changes
@@ -769,11 +769,10 @@ export default function ProductDetailPage() {
                       <button
                         key={index}
                         onClick={() => setSelectedImageIndex(index)}
-                        className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                          selectedImageIndex === index
+                        className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedImageIndex === index
                             ? "border-blue-600 shadow-md ring-2 ring-blue-200"
                             : "border-gray-200 hover:border-gray-400"
-                        }`}
+                          }`}
                       >
                         <img
                           src={image || "/placeholder.svg"}

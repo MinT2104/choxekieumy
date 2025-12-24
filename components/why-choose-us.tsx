@@ -1,19 +1,19 @@
 "use client"
 
-import { 
-  CreditCard, 
-  ThumbsUp, 
-  Award, 
-  Wrench, 
-  CalendarCheck, 
-  UserCheck 
+import {
+  CreditCard,
+  ThumbsUp,
+  Award,
+  Wrench,
+  CalendarCheck,
+  UserCheck
 } from "lucide-react"
 
 export default function WhyChooseUs() {
   return (
     <section className="py-16 bg-[#1877f2] overflow-hidden text-white font-sans">
       <div className="container mx-auto px-4">
-        
+
         {/* --- HEADER --- */}
         <div className="text-center mb-4 md:mb-12 relative z-10">
           <p className="text-yellow-400 font-bold uppercase tracking-wide text-sm mb-2">
@@ -27,14 +27,14 @@ export default function WhyChooseUs() {
         {/* --- RADIAL LAYOUT (DESKTOP) --- */}
         {/* Container chính định vị các phần tử */}
         <div className="relative w-full max-w-6xl mx-auto h-auto md:h-[600px] flex flex-col md:block items-center">
-          
+
           {/* 1. CENTRAL IMAGE (Hình xe ở giữa) */}
           <div className="md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-64 h-64 md:w-[450px] md:h-[450px] z-0 mb-8 md:mb-0">
             <div className="w-full h-full rounded-full border-[8px] border-white overflow-hidden shadow-2xl relative">
-               {/* Thay đổi src ảnh xe của bạn vào đây */}
-              <img 
-                src="/images/design-mode/red-luxury-car-road-with-blur-background_160204-245.jpg" 
-                alt="Chợ Xe Kiểu Mỹ Center" 
+              {/* Thay đổi src ảnh xe của bạn vào đây */}
+              <img
+                src="/images/cars/porsche-panamera-4s-2009/z7355211470789_cf28c707036c489e30a6640b37deaf9d.jpg"
+                alt="Chợ Xe Kiểu Mỹ Center"
                 className="w-full h-full object-cover"
               />
               {/* Overlay tối nhẹ bên dưới để nổi bật chữ nếu cần */}
