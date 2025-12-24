@@ -1,0 +1,492 @@
+"use client";
+import Link from "next/link";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Fuel,
+  MapPin,
+  Gauge,
+  Settings,
+  History,
+  Globe,
+  ChevronRight,
+} from "lucide-react";
+
+const cars = [
+  {
+    id: 1,
+    name: "Ford Transit 2024",
+    price: "680 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "Van",
+    transmission: "Số tự động",
+    odo: "43.000 km",
+    image:
+      "/images/cars/ford-transit-2024/z7355203094167_3789348b2a77d7f239fc5db4e172005b.jpg",
+  },
+  {
+    id: 2,
+    name: "Toyota Fortuner G 2014",
+    price: "475 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "SUV",
+    transmission: "Số sàn",
+    odo: "115.000 km",
+    image:
+      "/images/cars/fortuner-g-2014/z7355204074426_b75e2c95ef88738392b3675963e86489.jpg",
+  },
+  {
+    id: 3,
+    name: "Kia Sedona 2018",
+    price: "650 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "118.000 km",
+    image:
+      "/images/cars/sedona-2018/z7355205359095_99216fd3ee059cea9a843785f071cfa3.jpg",
+  },
+  {
+    id: 4,
+    name: "Isuzu MU-X 2022",
+    price: "630 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "SUV",
+    transmission: "Số sàn",
+    odo: "78.000 km",
+    image:
+      "/images/cars/isuzu-mux-2022/z7355205359095_99216fd3ee059cea9a843785f071cfa3.jpg",
+  },
+  {
+    id: 5,
+    name: "Toyota Fortuner 2021",
+    price: "870 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "SUV",
+    transmission: "Số tự động",
+    odo: "109.000 km",
+    image:
+      "/images/cars/fortuner-2021/z7355205899568_df4fe60c84c28dd05ace490bc5d27b4d.jpg",
+  },
+  {
+    id: 6,
+    name: "Mitsubishi Xpander 2019",
+    price: "435 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "76.000 km",
+    image:
+      "images/cars/xpander-2019/z7355206414338_d399ae7ba9c2be2172a70ffac853ffd0.jpg",
+  },
+  {
+    id: 7,
+    name: "Mitsubishi Xpander Cross 2020",
+    price: "Liên hệ",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "96.669 km",
+    image:
+      "/images/cars/xpander-cross-2020/z7355206981667_4ef214c2bfcfcd85f0d77ce0ae075e48.jpg",
+  },
+  {
+    id: 8,
+    name: "Mitsubishi Xpander Cross 2021",
+    price: "470 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "N/A",
+    image:
+      "/images/cars/mitsubitsi-xpander-cross-2021/z7355207418477_41800dcc7afab8f03881d5bfde55c460.jpg",
+  },
+  {
+    id: 9,
+    name: "Suzuki Ertiga Sport 2020",
+    price: "395 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "88.000 km",
+    image:
+      "/images/cars/suzuki-ertiga-sport-2020/z7355208063842_722871e78663f97427575efa93910c4b.jpg",
+  },
+  {
+    id: 10,
+    name: "Mitsubishi Xpander 2022 Premium",
+    price: "538 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "75.000 km",
+    image:
+      "/images/cars/xpander-2022-premium/z7355208531592_8dec31f2d2748f2903c44b53b90f5c6c.jpg",
+  },
+  {
+    id: 11,
+    name: "Toyota Innova 2018 G AT",
+    price: "495 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "128.000 km",
+    image:
+      "/images/cars/toyota-innova-2018-g-at/z7355208947100_4a29ed56c085c70f9a8cda7336853027.jpg",
+  },
+  {
+    id: 12,
+    name: "Toyota Fortuner 2016",
+    price: "440 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "SUV",
+    transmission: "Số tự động",
+    odo: "105.000 km",
+    image:
+      "/images/cars/up-deeta-fortuner-2016/z7355209423772_4c2ae6ebcf9edcfbd025490d9e33ddca.jpg",
+  },
+  {
+    id: 13,
+    name: "Toyota Innova 2019",
+    price: "450 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số sàn",
+    odo: "112.000 km",
+    image:
+      "/images/cars/innova-2019/z7355210040693_cefe65c6d91e34f679c356d09569775b.jpg",
+  },
+  {
+    id: 14,
+    name: "Ford Everest 2010",
+    price: "320 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "SUV",
+    transmission: "Số tự động",
+    odo: "92.000 km",
+    image:
+      "/images/cars/ford-everest-2010/z7355210465152_641f3b741a511cff67f1af03c3de4e5e.jpg",
+  },
+  {
+    id: 15,
+    name: "Toyota Hilux 2019",
+    price: "555 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "Pickup",
+    transmission: "Số tự động",
+    odo: "110.000 km",
+    image:
+      "/images/cars/toyota-hilux-2019/z7355211002519_ac73f37a82075425bd698c84eb0e8725.jpg",
+  },
+  {
+    id: 16,
+    name: "Porsche Panamera 4S 2009",
+    price: "850 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "Sedan",
+    transmission: "Số tự động",
+    odo: "100.000 km",
+    image:
+      "/images/cars/porsche-panamera-4s-2009/z7355211470789_cf28c707036c489e30a6640b37deaf9d.jpg",
+  },
+  {
+    id: 17,
+    name: "Hyundai Accent ATH 2018",
+    price: "365 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "Sedan",
+    transmission: "Số tự động",
+    odo: "N/A",
+    image:
+      "/images/cars/hyundai-accent-ath-2018/z7355212286737_fc0469a8536ebea462b5b07c00f6287d.jpg",
+  },
+  {
+    id: 18,
+    name: "Mazda3 2018 1.5 AT",
+    price: "430 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "Sedan",
+    transmission: "Số tự động",
+    odo: "63.000 km",
+    image:
+      "/images/cars/mazda3-2018-1.5-at/z7355212785899_a5e7c14ff31653ae210eaba45c66ea10.jpg",
+  },
+  {
+    id: 19,
+    name: "Mazda CX-5 2016 2.5",
+    price: "465 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "SUV",
+    transmission: "Số tự động",
+    odo: "111.000 km",
+    image:
+      "/images/cars/cx5-2016-2.5/z7355213260964_91c55418a175b948cf6f033d905312e0.jpg",
+  },
+  {
+    id: 20,
+    name: "Mazda CX-5 2013 2.0",
+    price: "385 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "SUV",
+    transmission: "Số tự động",
+    odo: "131.000 km",
+    image:
+      "/images/cars/mazda-cx5-2013-20.0/z7355214008457_5841df558ce2b16a5bdba1c1204ac03a.jpg",
+  },
+  {
+    id: 21,
+    name: "Mercedes Smart Roadster 2003",
+    price: "350 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "Coupe",
+    transmission: "Số tự động",
+    odo: "N/A",
+    image:
+      "/images/cars/mercedes-smart-roadster-2003/z7355214347527_ab8c3d2ddae60375414d7ad9ced83fb3.jpg",
+  },
+  {
+    id: 22,
+    name: "Kia Sedona 2019",
+    price: "738 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "74.000 km",
+    image:
+      "/images/cars/sedona-2019/z7355215102517_383178fc1af7d927b12319031e644e43.jpg",
+  },
+  {
+    id: 23,
+    name: "Kia Sedona 2016",
+    price: "550 Triệu Đồng",
+    fuel: "Dầu",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "110.000 km",
+    image:
+      "/images/cars/sedona-2016/z7355215518933_d04194ef4ef88cedffe5e255fb49d3eb.jpg",
+  },
+  {
+    id: 24,
+    name: "Toyota Innova V 2010",
+    price: "280 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "MPV",
+    transmission: "Số tự động",
+    odo: "99.000 km",
+    image:
+      "/images/cars/innova-v-2010/z7355216066190_6dfcb6ce3f964b76905817da240cf8d4.jpg",
+  },
+  {
+    id: 25,
+    name: "Mercedes C200 2012",
+    price: "300 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Trong nước",
+    type: "Sedan",
+    transmission: "Số tự động",
+    odo: "90.000 km",
+    image:
+      "/images/cars/mercedes-c200-2012/z7355216557021_e6bded0cfd7dbcc3e69ae414692dd8e8.jpg",
+  },
+  {
+    id: 26,
+    name: "BMW X1 2010",
+    price: "299 Triệu Đồng",
+    fuel: "Xăng",
+    status: "Đã sử dụng",
+    location: "Hồ Chí Minh",
+    domestic: "Nhập khẩu",
+    type: "SUV",
+    transmission: "Số tự động",
+    odo: "97.000 km",
+    image:
+      "/images/cars/bmw-x1-2010/z7355217017627_f19fe1b44e05b131b3e0813a27be30b4.jpg",
+  },
+];
+
+export { cars };
+
+export default function ProductsPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          {/* Header */}
+          <div className="mb-10">
+            <h1 className="text-4xl font-black text-gray-900 uppercase tracking-tight mb-2">
+              Danh Sách Xe
+            </h1>
+            <p className="text-gray-600 font-medium">
+              Tìm chiếc xe phù hợp với bạn từ kho xe lớn nhất
+            </p>
+          </div>
+
+          {/* Car Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cars.map((car) => (
+              <Link key={car.id} href={`/products/${car.id}`}>
+                <Card className="group overflow-hidden bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                  {/* Car Image Container */}
+                  <div className="relative overflow-hidden aspect-[4/3]">
+                    <img
+                      src={car.image || "/placeholder.svg"}
+                      alt={car.name}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                  </div>
+
+                  {/* Card Body */}
+                  <CardContent className="p-4 flex flex-col flex-1">
+                    {/* Name */}
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 line-clamp-1">
+                      {car.name}
+                    </h3>
+
+                    {/* Price */}
+                    <p className="text-[#0052cc] font-bold text-base mb-4">
+                      {car.price}
+                    </p>
+
+                    {/* Specs Grid */}
+                    <div className="grid grid-cols-3 gap-y-3 gap-x-2 mb-6">
+                      <div className="flex flex-col items-center gap-1">
+                        <Fuel className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-xs font-medium text-gray-600">
+                          {car.fuel}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-1">
+                        <History className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-xs font-medium text-gray-600">
+                          {car.status}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-1">
+                        <MapPin className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-xs font-medium text-gray-600 truncate">
+                          {car.location}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-1">
+                        <Globe className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-xs font-medium text-gray-600">
+                          {car.domestic}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-1">
+                        <Gauge className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-xs font-medium text-gray-600">
+                          {car.type}
+                        </span>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-1">
+                        <Settings className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span className="text-xs font-medium text-gray-600">
+                          {car.transmission}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* View Details Button */}
+                    <div className="mt-auto pt-2">
+                      <button className="w-full cursor-pointer py-3 bg-gray-100 hover:bg-gray-200 rounded text-red-600 font-bold text-sm uppercase transition-colors flex items-center justify-center gap-1 group/btn">
+                        Xem Chi Tiết
+                        <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
