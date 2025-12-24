@@ -8,13 +8,13 @@ export default function ContactPage() {
         {
             city: "Chi Nhánh 1 - TP. Hồ Chí Minh",
             address: "714 Tân Kỳ-Tân Quý, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM",
-            phone: "0903 901 438",
+            phone: "0935 794 345 (A Hậu)",
             hours: "8:00 - 17:30 (Từ Thứ 2 - CN)",
         },
         {
             city: "Chi Nhánh 2 - TP. Hồ Chí Minh",
             address: "507 Quốc lộ 1A, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM",
-            phone: "0981 292 973",
+            phone: "0935 794 345 (A Hậu)",
             hours: "8:00 - 17:30 (Từ Thứ 2 - CN)",
         },
     ];
@@ -45,16 +45,10 @@ export default function ContactPage() {
                             <h3 className="text-xl font-bold text-blue-700 mb-2">Gọi Cho Chúng Tôi</h3>
                             <p className="text-gray-700 mb-2">Hotline 24/7</p>
                             <a
-                                href="tel:0903901438"
+                                href="tel:0935794345"
                                 className="text-blue-700 font-bold text-lg hover:underline block mb-2"
                             >
-                                0903 901 438
-                            </a>
-                            <a
-                                href="tel:0981292973"
-                                className="text-blue-700 font-bold text-lg hover:underline"
-                            >
-                                0981 292 973
+                                0935 794 345 (A Hậu)
                             </a>
                         </div>
 

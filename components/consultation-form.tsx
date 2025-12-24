@@ -87,11 +87,8 @@ Cảm ơn!
                                 <Phone className="w-6 h-6 text-[#0052cc] flex-shrink-0 mt-1" />
                                 <div>
                                     <h4 className="font-bold text-gray-800 mb-1">Gọi Chúng Tôi</h4>
-                                    <a href="tel:0903901438" className="text-blue-700 hover:underline block">
-                                        0903 901 438
-                                    </a>
-                                    <a href="tel:0981292973" className="text-blue-700 hover:underline">
-                                        0981 292 973
+                                    <a href="tel:0935794345" className="text-blue-700 hover:underline block">
+                                        0935 794 345 (A Hậu)
                                     </a>
                                 </div>
                             </div>

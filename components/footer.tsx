@@ -26,7 +26,7 @@ export default function Footer() {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-black text-white mb-2">CÔNG TY TNHH TM DV XD ĐỊA ỐC TÂN VIỄN ĐÔNG</h2>
+              <h2 className="text-2xl font-black text-white mb-2">CHỢ XE KIỂU MỸ</h2>
               <p className="text-gray-400 text-sm">Chợ Xe Kiểu Mỹ - Mua Bán Xe Uy Tín Số 1</p>
             </div>
           </div>
@@ -61,11 +61,8 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
                 <div>
-                  <a href="tel:0903901438" className="hover:text-white transition-colors block font-semibold">
-                    0903 901 438 (A Tiên)
-                  </a>
-                  <a href="tel:0981292973" className="hover:text-white transition-colors block font-semibold">
-                    0981 292 973 (A Tiên)
+                  <a href="tel:0935794345" className="hover:text-white transition-colors block font-semibold">
+                    0935 794 345 (A Hậu)
                   </a>
                 </div>
               </li>

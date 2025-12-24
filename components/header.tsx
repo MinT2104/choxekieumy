@@ -57,7 +57,7 @@ export default function Header() {
                 HOTLINE 24/7
               </div>
               <a
-                href="tel:0903901438"
+                href="tel:0935794345"
                 className={`bg-blue-700 text-white rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 ${isScrolled ? "px-3 py-1" : "px-6 py-2"
                   }`}
               >
@@ -66,7 +66,7 @@ export default function Header() {
                 </div>
                 <span className={`font-black tracking-wide whitespace-nowrap transition-all duration-300 ${isScrolled ? "text-sm hidden lg:inline" : "text-xl"
                   }`}>
-                  0903 901 438
+                  0935 794 345
                 </span>
               </a>
             </div>

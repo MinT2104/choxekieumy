@@ -941,7 +941,7 @@ export default function ProductDetailPage() {
                         href="tel:0935794345"
                         className="text-lg font-bold text-blue-600 hover:text-blue-700 transition-colors"
                       >
-                        0935 794 345
+                        0935 794 345 (A Hậu)
                       </a>
                     </div>
                   </div>
