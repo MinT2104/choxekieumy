@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Danh sách các hãng xe
 const BRANDS = [
@@ -27,19 +27,19 @@ const BRANDS = [
   },
   {
     name: "Suzuki",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Suzuki_logo_2.svg/2560px-Suzuki_logo_2.svg.png",
+    logo: "/suzuki-logo.png",
   },
   {
     name: "Audi",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/2560px-Audi-Logo_2016.svg.png",
+    logo: "/audi-logo.png",
   },
   {
     name: "Kia",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kia_logo.svg/2560px-Kia_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/KIA_logo2.svg/1600px-KIA_logo2.svg.png?20241230161646",
   },
   {
     name: "Mazda",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Mazda_logo_with_emblem.svg/2560px-Mazda_logo_with_emblem.svg.png",
+    logo: "https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png",
   },
   {
     name: "Mercedes",
@@ -49,30 +49,29 @@ const BRANDS = [
     name: "BMW",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/2048px-BMW.svg.png",
   },
-]
+];
 
 export default function CarBrands() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 300
+      const scrollAmount = 300;
       const newScrollLeft =
         direction === "left"
           ? scrollContainerRef.current.scrollLeft - scrollAmount
-          : scrollContainerRef.current.scrollLeft + scrollAmount
+          : scrollContainerRef.current.scrollLeft + scrollAmount;
 
       scrollContainerRef.current.scrollTo({
         left: newScrollLeft,
         behavior: "smooth",
-      })
+      });
     }
-  }
+  };
 
   return (
     <section className="py-8 bg-white border-b border-gray-200">
       <div className="container mx-auto px-4 relative group">
-        
         {/* Nút bấm bên trái (Đã sửa kích thước từ w-32 thành w-10 chuẩn) */}
         <button
           onClick={() => scroll("left")}
@@ -102,6 +101,13 @@ export default function CarBrands() {
                 // CHỈNH SỬA TẠI ĐÂY:
                 // Thêm object-contain để giữ tỉ lệ, nhưng kích thước cha đã to hơn nên ảnh sẽ to hơn.
                 className="w-full h-full object-contain opacity-100 transition-all duration-300"
+                onError={(e) => {
+                  // Fallback to placeholder if image fails to load
+                  const target = e.target as HTMLImageElement;
+                  if (target.src !== "/placeholder-logo.png") {
+                    target.src = "/placeholder-logo.png";
+                  }
+                }}
               />
             </div>
           ))}
@@ -116,5 +122,5 @@ export default function CarBrands() {
         </button>
       </div>
     </section>
-  )
+  );
 }

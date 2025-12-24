@@ -891,7 +891,7 @@ export default function ProductDetailPage() {
                 <Button
                   className="w-full bg-white text-blue-600 hover:bg-gray-100 font-bold py-6 text-base shadow-lg"
                   onClick={() => {
-                    window.location.href = "tel:0528377779";
+                    window.location.href = "tel:0935794345";
                   }}
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -943,10 +943,10 @@ export default function ProductDetailPage() {
                         Hotline
                       </p>
                       <a
-                        href="tel:0528377779"
+                        href="tel:0935794345"
                         className="text-lg font-bold text-blue-600 hover:text-blue-700 transition-colors"
                       >
-                        052 83 77779
+                        0935 794 345
                       </a>
                     </div>
                   </div>
@@ -959,10 +959,10 @@ export default function ProductDetailPage() {
                         Email
                       </p>
                       <a
-                        href="mailto:info@choxekieumy.com"
+                        href="mailto:duyhau686883@gmail.com"
                         className="text-base font-semibold text-blue-600 hover:text-blue-700 transition-colors break-all"
                       >
-                        info@choxekieumy.com
+                        duyhau686883@gmail.com
                       </a>
                     </div>
                   </div>

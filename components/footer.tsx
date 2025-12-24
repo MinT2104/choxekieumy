@@ -35,16 +35,20 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-1" />
                 <span>
                   <strong className="text-white block mb-1">Showroom:</strong>
-                  714 Tân Kỳ Tân Quý, Phường Bình Hưng Hòa, Quận Bình Tân, Tp HCM
+                  714 Tân Kỳ Tân Quý, KP 39, Phường Bình Hưng Hòa, Thành phố Hồ Chí Minh
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
-                <span>Điện thoại: 0909 XXX XXX - Liên hệ</span>
+                <a href="tel:0935794345" className="hover:text-white transition-colors">
+                  Điện thoại: 0935 794 345
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-white flex-shrink-0" />
-                <span>Email: contactsupport@gmail.com</span>
+                <a href="mailto:duyhau686883@gmail.com" className="hover:text-white transition-colors">
+                  Email: duyhau686883@gmail.com
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-5 h-5 text-white flex-shrink-0" />

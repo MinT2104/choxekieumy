@@ -41,14 +41,17 @@ export default function Header() {
               <div className="text-blue-700 text-xs font-bold mb-2 tracking-widest">
                 HOTLINE 24/7
               </div>
-              <div className="bg-blue-700 text-white rounded-full px-6 py-2 flex items-center gap-3 shadow-lg hover:shadow-xl transition-shadow">
+              <a
+                href="tel:0935794345"
+                className="bg-blue-700 text-white rounded-full px-6 py-2 flex items-center gap-3 shadow-lg hover:shadow-xl transition-shadow"
+              >
                 <div className="bg-white rounded-full p-2 flex-shrink-0">
                   <Phone className="w-5 h-5 text-blue-700" />
                 </div>
                 <span className="text-xl font-black tracking-wide whitespace-nowrap">
-                  052 83 77779
+                  0935 794 345
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import {
   Phone,
   MapPin,
@@ -10,14 +10,13 @@ import {
   Facebook,
   Youtube,
   Instagram,
-  Mail
-} from "lucide-react"
+  Mail,
+} from "lucide-react";
 
 export default function ContactSection() {
   return (
     <section className="py-24 bg-white overflow-hidden font-sans">
       <div className="container mx-auto px-4">
-
         {/* ===== HEADER ===== */}
         <div className="text-center mb-16 lg:mb-20">
           <span className="text-[#0052cc] font-bold text-sm tracking-widest uppercase mb-3 block">
@@ -30,7 +29,6 @@ export default function ContactSection() {
 
         {/* ===== GRID (STACK LAYOUT) ===== */}
         <div className="relative max-w-7xl mx-auto">
-
           {/* ===== FORM (LAYER TRÊN) ===== */}
           <div
             className="
@@ -86,9 +84,8 @@ export default function ContactSection() {
           </div>
 
           {/* ===== INFO BOX (LAYER DƯỚI) ===== */}
-  <div className="bg-[#0052cc] rounded-[30px] min-h-[550px] p-8 md:p-12 lg:pl-64 lg:pr-12 flex items-center text-white">
+          <div className="bg-[#0052cc] rounded-[30px] min-h-[550px] p-8 md:p-12 lg:pl-64 lg:pr-12 flex items-center text-white">
             <div className="bg-[#0052cc] w-full h-full text-white rounded-[30px] p-8 md:p-12 lg:pl-64 lg:pr-12 flex flex-col justify-center shadow-lg">
-
               <h3 className="text-2xl font-bold uppercase border-b border-white/30 pb-4 mb-8 text-center lg:text-left">
                 THÔNG TIN LIÊN HỆ
               </h3>
@@ -99,7 +96,9 @@ export default function ContactSection() {
                     <Home className="w-5 h-5 text-[#0052cc]" />
                   </div>
                   <div>
-                    <h4 className="font-bold uppercase text-sm mb-1">Trụ sở chính</h4>
+                    <h4 className="font-bold uppercase text-sm mb-1">
+                      Trụ sở chính
+                    </h4>
                     <p className="text-sm text-blue-100">
                       298 Vĩnh Viễn, P.4, Q.10, TP.HCM
                     </p>
@@ -111,9 +110,12 @@ export default function ContactSection() {
                     <MapPin className="w-5 h-5 text-[#0052cc]" />
                   </div>
                   <div>
-                    <h4 className="font-bold uppercase text-sm mb-1">Showroom</h4>
+                    <h4 className="font-bold uppercase text-sm mb-1">
+                      Showroom
+                    </h4>
                     <p className="text-sm text-blue-100">
-                      714 Tân Kỳ Tân Quý, Bình Tân, TP.HCM
+                      714 Tân Kỳ Tân Quý, KP 39, Phường Bình Hưng Hòa, Thành phố
+                      Hồ Chí Minh
                     </p>
                   </div>
                 </div>
@@ -123,10 +125,15 @@ export default function ContactSection() {
                     <Phone className="w-5 h-5 text-[#0052cc]" />
                   </div>
                   <div>
-                    <h4 className="font-bold uppercase text-sm mb-1">Hotline</h4>
-                    <p className="text-lg font-bold">
-                      052 83 77779
-                    </p>
+                    <h4 className="font-bold uppercase text-sm mb-1">
+                      Hotline
+                    </h4>
+                    <a
+                      href="tel:0935794345"
+                      className="text-lg font-bold hover:underline"
+                    >
+                      0935 794 345
+                    </a>
                   </div>
                 </div>
               </div>
@@ -142,12 +149,10 @@ export default function ContactSection() {
                   </a>
                 ))}
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }
