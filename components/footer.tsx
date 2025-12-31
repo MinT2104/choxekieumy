@@ -51,13 +51,6 @@ export default function Footer() {
                   507 Quốc lộ 1A, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-1" />
-                <span>
-                  <strong className="text-white block mb-1">Chi nhánh 2:</strong>
-                  507 Quốc lộ 1A, P. Bình Hưng Hòa, Q. Bình Tân, TP.HCM
-                </span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
                 <div>
